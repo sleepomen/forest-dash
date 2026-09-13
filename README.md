@@ -6,7 +6,7 @@ A small 2D platformer made in [Godot 4](https://godotengine.org) for
 A little fox got lost on the way home. Run and jump through the forest,
 collect berries, squash slimes, dodge thorns, and make it back to the den.
 
-▶️ **Play it here:** _(add your itch.io link once the page is public)_
+▶️ **Play it here:** https://sleepomen.itch.io/forest-dash
 
 ![Forest Dash gameplay](press/screenshot.png)
 
