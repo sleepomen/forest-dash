@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_game"]
+[ext_resource type="AudioStream" path="res://assets/audio/music.wav" id="2_music"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_game")
+
+[node name="Sfx" type="Node" parent="."]
+
+[node name="Player1" type="AudioStreamPlayer" parent="Sfx"]
+volume_db = -5.0
+
+[node name="Player2" type="AudioStreamPlayer" parent="Sfx"]
+volume_db = -5.0
+
+[node name="Player3" type="AudioStreamPlayer" parent="Sfx"]
+volume_db = -5.0
+
+[node name="Player4" type="AudioStreamPlayer" parent="Sfx"]
+volume_db = -5.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_music")
+volume_db = -16.0

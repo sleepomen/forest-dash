@@ -1,0 +1,230 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" path="res://scenes/berry.tscn" id="3_berry"]
+[ext_resource type="PackedScene" path="res://scenes/slime.tscn" id="4_slime"]
+[ext_resource type="PackedScene" path="res://scenes/thorns.tscn" id="5_thorns"]
+[ext_resource type="PackedScene" path="res://scenes/den.tscn" id="6_den"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="7_player"]
+[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="8_hud"]
+[ext_resource type="Texture2D" path="res://assets/art/bg_sky.png" id="9_sky"]
+[ext_resource type="Texture2D" path="res://assets/art/bg_trees_far.png" id="10_far"]
+[ext_resource type="Texture2D" path="res://assets/art/bg_trees_near.png" id="11_near"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+camera_bounds = Rect2(-40, -280, 3920, 840)
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Background/Sky"]
+texture = ExtResource("9_sky")
+centered = false
+
+[node name="FarTrees" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.2, 0.06)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Background/FarTrees"]
+position = Vector2(0, 150)
+texture = ExtResource("10_far")
+centered = false
+
+[node name="NearTrees" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2(0.45, 0.12)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite" type="Sprite2D" parent="Background/NearTrees"]
+position = Vector2(0, 130)
+texture = ExtResource("11_near")
+centered = false
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Platform1" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(0, 352)
+tiles_wide = 14
+tiles_high = 3
+
+[node name="Platform2" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(576, 352)
+tiles_wide = 10
+tiles_high = 3
+
+[node name="Platform3" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(896, 288)
+tiles_wide = 6
+tiles_high = 5
+
+[node name="Platform4" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(1184, 288)
+tiles_wide = 7
+tiles_high = 5
+
+[node name="Platform5" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(1536, 256)
+tiles_wide = 4
+tiles_high = 1
+
+[node name="Platform6" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(1760, 192)
+tiles_wide = 4
+tiles_high = 1
+
+[node name="Platform7" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(1920, 352)
+tiles_wide = 20
+tiles_high = 3
+
+[node name="Platform8" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(2144, 256)
+tiles_wide = 6
+tiles_high = 1
+
+[node name="Platform9" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(2560, 352)
+tiles_wide = 4
+tiles_high = 3
+
+[node name="Platform10" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(2784, 320)
+tiles_wide = 3
+tiles_high = 1
+
+[node name="Platform11" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(2912, 256)
+tiles_wide = 3
+tiles_high = 1
+
+[node name="Platform12" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(3040, 192)
+tiles_wide = 3
+tiles_high = 1
+
+[node name="Platform13" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(3200, 160)
+tiles_wide = 7
+tiles_high = 1
+
+[node name="Platform14" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(3520, 224)
+tiles_wide = 3
+tiles_high = 1
+
+[node name="Platform15" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(3616, 288)
+tiles_wide = 7
+tiles_high = 5
+
+[node name="Thorns1" parent="Level" instance=ExtResource("5_thorns")]
+position = Vector2(768, 320)
+
+[node name="Thorns2" parent="Level" instance=ExtResource("5_thorns")]
+position = Vector2(800, 320)
+
+[node name="Thorns3" parent="Level" instance=ExtResource("5_thorns")]
+position = Vector2(2208, 320)
+
+[node name="Thorns4" parent="Level" instance=ExtResource("5_thorns")]
+position = Vector2(2240, 320)
+
+[node name="Berry1" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(176, 336)
+
+[node name="Berry2" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(272, 336)
+
+[node name="Berry3" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(496, 304)
+
+[node name="Berry4" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(976, 272)
+
+[node name="Berry5" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(1008, 272)
+
+[node name="Berry6" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(1584, 240)
+
+[node name="Berry7" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(1616, 240)
+
+[node name="Berry8" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(1808, 176)
+
+[node name="Berry9" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(1840, 176)
+
+[node name="Berry10" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(2000, 336)
+
+[node name="Berry11" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(2032, 336)
+
+[node name="Berry12" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(2512, 336)
+
+[node name="Berry13" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(2224, 240)
+
+[node name="Berry14" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(2256, 240)
+
+[node name="Berry15" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(2832, 304)
+
+[node name="Berry16" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(2960, 240)
+
+[node name="Berry17" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(3088, 176)
+
+[node name="Berry18" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(3248, 144)
+
+[node name="Berry19" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(3280, 144)
+
+[node name="Berry20" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(3312, 144)
+
+[node name="Berry21" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(3568, 208)
+
+[node name="Berry22" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(3664, 272)
+
+[node name="Berry23" parent="Level" instance=ExtResource("3_berry")]
+position = Vector2(3696, 272)
+
+[node name="Slime1" parent="Level" instance=ExtResource("4_slime")]
+position = Vector2(368, 352)
+patrol_distance = 96.0
+
+[node name="Slime2" parent="Level" instance=ExtResource("4_slime")]
+position = Vector2(1296, 288)
+patrol_distance = 128.0
+
+[node name="Slime3" parent="Level" instance=ExtResource("4_slime")]
+position = Vector2(2128, 352)
+patrol_distance = 96.0
+
+[node name="Slime4" parent="Level" instance=ExtResource("4_slime")]
+position = Vector2(2448, 352)
+patrol_distance = 96.0
+
+[node name="Slime5" parent="Level" instance=ExtResource("4_slime")]
+position = Vector2(3376, 160)
+patrol_distance = 64.0
+
+[node name="Den" parent="Level" instance=ExtResource("6_den")]
+position = Vector2(3712, 226)
+
+[node name="Player" parent="." instance=ExtResource("7_player")]
+position = Vector2(80, 352)
+
+[node name="HUD" parent="." instance=ExtResource("8_hud")]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/thorns.gd" id="1_thorns"]
+[ext_resource type="Texture2D" path="res://assets/art/thorns.png" id="2_thorns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thorns"]
+size = Vector2(26, 18)
+
+[node name="Thorns" type="Area2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_thorns")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_thorns")
+centered = false
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(16, 22)
+shape = SubResource("RectangleShape2D_thorns")

@@ -1,0 +1,154 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" path="res://assets/art/heart.png" id="2_heart"]
+[ext_resource type="Texture2D" path="res://assets/art/berry.png" id="3_berry"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Top" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = -12.0
+offset_bottom = 36.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Hearts" type="HBoxContainer" parent="Root/Top"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heart1" type="TextureRect" parent="Root/Top/Hearts"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_heart")
+
+[node name="Heart2" type="TextureRect" parent="Root/Top/Hearts"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_heart")
+
+[node name="Heart3" type="TextureRect" parent="Root/Top/Hearts"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_heart")
+
+[node name="Spacer" type="Control" parent="Root/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="BerryIcon" type="TextureRect" parent="Root/Top"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_berry")
+
+[node name="BerryLabel" type="Label" parent="Root/Top"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.13, 0.09, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "0 / 0"
+
+[node name="Gap" type="Control" parent="Root/Top"]
+layout_mode = 2
+custom_minimum_size = Vector2(18, 0)
+mouse_filter = 2
+
+[node name="ScoreLabel" type="Label" parent="Root/Top"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 0.95, 0.72, 1)
+theme_override_colors/font_outline_color = Color(0.13, 0.09, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 18
+text = "SCORE  0"
+
+[node name="Hint" type="Label" parent="Root"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -44.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.9)
+theme_override_colors/font_outline_color = Color(0.13, 0.09, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 15
+text = "A / D or arrows to move    •    SPACE or W to jump    •    R to restart"
+horizontal_alignment = 1
+
+[node name="Overlay" type="Control" parent="Root"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dim" type="ColorRect" parent="Root/Overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.05, 0.12, 0.08, 0.62)
+
+[node name="Panel" type="VBoxContainer" parent="Root/Overlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -60.0
+offset_right = 220.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Root/Overlay/Panel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.93, 0.66, 1)
+theme_override_colors/font_outline_color = Color(0.13, 0.09, 0.06, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+text = "YOU MADE IT HOME!"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="Root/Overlay/Panel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.13, 0.09, 0.06, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 17
+text = "Press R to play again"
+horizontal_alignment = 1
