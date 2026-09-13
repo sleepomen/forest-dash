@@ -8,6 +8,8 @@ collect berries, squash slimes, dodge thorns, and make it back to the den.
 
 ▶️ **Play it here:** _(add your itch.io link once the page is public)_
 
+![Forest Dash gameplay](press/screenshot.png)
+
 ## Controls
 
 | Action  | Keys                    |
@@ -34,6 +36,7 @@ assets/audio/    sound effects and music (WAV)
 assets/*.tres    SpriteFrames animation resources
 scenes/          main.tscn (the level) plus one scene per game object
 scripts/         one GDScript per game object
+press/           cover image and screenshots for the itch.io page
 ```
 
 `scenes/main.tscn` is the level. `scripts/game.gd` is an autoload that

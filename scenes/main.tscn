@@ -14,7 +14,7 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main")
-camera_bounds = Rect2(-40, -280, 3920, 840)
+camera_bounds = Rect2(-40, -280, 4020, 840)
 
 [node name="Background" type="ParallaxBackground" parent="."]
 
@@ -119,6 +119,11 @@ tiles_high = 1
 position = Vector2(3616, 288)
 tiles_wide = 7
 tiles_high = 5
+
+[node name="Platform16" parent="Level" instance=ExtResource("2_platform")]
+position = Vector2(3840, 128)
+tiles_wide = 3
+tiles_high = 10
 
 [node name="Thorns1" parent="Level" instance=ExtResource("5_thorns")]
 position = Vector2(768, 320)

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" path="res://assets/art/den.png" id="2_den"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_den"]
-size = Vector2(24, 36)
+size = Vector2(44, 140)
 
 [node name="Den" type="Area2D"]
 collision_layer = 2
@@ -16,5 +16,5 @@ texture = ExtResource("2_den")
 centered = false
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2(24, 42)
+position = Vector2(24, -6)
 shape = SubResource("RectangleShape2D_den")
